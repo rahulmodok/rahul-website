@@ -1,35 +1,112 @@
+<!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rahul — Builder & Creator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rahul — Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0c0c0c;
+            color: white;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: #4cff4c;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #d4d4d4;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            margin-top: 25px;
+        }
+
+        .btn {
+            background: #4cff4c;
+            color: black;
+            padding: 12px 28px;
+            text-decoration: none;
+            margin: 6px;
+            font-weight: bold;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #39cc39;
+        }
+
+        /* SECTION CARD */
+        .section {
+            max-width: 750px;
+            margin: 60px auto;
+            padding: 25px 20px;
+            background: #161616;
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            color: #4cff4c;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Rahul</h1>
-      <p class="tag">Student • Learner • Builder</p>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="card about">
-      <h2>আমার সম্পর্কে</h2>
-      <p>হাই! আমি ছোট ছোট টুল বানাই, ওয়েব ডেভ শিখছি এবং নতুন জিনিস এক্সপ্লোর করি।</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Rahul</h1>
+        <p>Student • Learner • Builder</p>
+
+        <div class="buttons">
+            <a href="#about" class="btn">About Me</a>
+            <a href="#contact" class="btn">Contact</a>
+        </div>
     </section>
 
-    <section class="card contact">
-      <h2>যোগাযোগ</h2>
-      <p>Email: rahulmodok579@gmail.com<a></a></p>
-      <p>Phone: +8801330012362</p>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <h2>আমার সম্পর্কে</h2>
+        <p>হাই! আমি ছোট ছোট টুল বানাই, ওয়েব ডেভ শিখছি, এবং নতুন জিনিস explore করি।</p>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>Made with Termux + Flask • © Rahul</small>
-    </div>
-  </footer>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <h2>যোগাযোগ</h2>
+        <p>Email: <a style="color:#4cff4c" href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a></p>
+        <p>Phone: <a style="color:#4cff4c" href="tel:+8801330012362">+8801330012362</a></p>
+    </section>
+
+    <div class="footer">© Rahul • Made with ❤️</div>
+
 </body>
 </html>
