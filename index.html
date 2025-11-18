@@ -146,23 +146,89 @@
     <h4>Contact</h4>
     <p class="text-muted">Email: <a href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a> • Phone: 01330012362</p>
     <!-- Simple contact form (works with Netlify forms or with backend) -->
-    <form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact">
+    <!-- Mailto JS form (paste this inside your Contact section) -->
+<div id="mailto-contact">
+  <form id="fakeContact" class="mb-3" onsubmit="return handleMailto(event)">
+    <div class="mb-3">
+      <input id="mc-name" class="form-control" type="text" name="name" placeholder="Your name" required>
+    </div>
 
-  <div class="mb-3">
-    <input class="form-control" type="text" name="name" placeholder="Your name" required>
-  </div>
+    <div class="mb-3">
+      <input id="mc-email" class="form-control" type="email" name="email" placeholder="Your email" required>
+    </div>
 
-  <div class="mb-3">
-    <input class="form-control" type="email" name="email" placeholder="Your email" required>
-  </div>
+    <div class="mb-3">
+      <textarea id="mc-msg" class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+    </div>
 
-  <div class="mb-3">
-    <textarea class="form-control" name="message" rows="4" placeholder="Message" required></textarea>
-  </div>
+    <div class="d-flex gap-2">
+      <button id="mc-send" class="btn btn-primary" type="submit">Send</button>
+      <button id="mc-clear" class="btn btn-outline-secondary" type="button" onclick="clearMailForm()">Clear</button>
+    </div>
 
-  <button class="btn btn-primary" type="submit">Send</button>
-    </form>
+    <div id="mc-feedback" class="mt-3" style="display:none;"></div>
+  </form>
+</div>
+
+<script>
+/**
+ * handleMailto:
+ * - validates fields (browser already does basic validation)
+ * - builds mailto URL with encoded subject/body
+ * - navigates to mailto: to open user's email client
+ */
+function handleMailto(evt){
+  evt.preventDefault();
+
+  const toEmail = "rahulmodok579@gmail.com"; // change if needed
+  const name  = document.getElementById('mc-name').value.trim();
+  const email = document.getElementById('mc-email').value.trim();
+  const msg   = document.getElementById('mc-msg').value.trim();
+
+  // basic guard
+  if(!name || !email || !msg){
+    showFeedback('Please fill all fields.', 'danger');
+    return false;
+  }
+
+  // Build subject and body
+  const subject = encodeURIComponent(`Website message from ${name}`);
+  let body = '';
+  body += encodeURIComponent(`Name: ${name}`) + '%0A';
+  body += encodeURIComponent(`Email: ${email}`) + '%0A%0A';
+  body += encodeURIComponent(msg);
+
+  // Full mailto URL
+  const mailto = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+
+  // Try to open mail client
+  // On some browsers this will open the native mail app; on desktop it opens default mail client.
+  window.location.href = mailto;
+
+  // Provide visual feedback in case mail client is blocked or user cancels
+  showFeedback('Your email client should open now. If it does not, copy the message manually or check device mail app settings.', 'info');
+  return true;
+}
+
+function showFeedback(text, type){
+  const fb = document.getElementById('mc-feedback');
+  fb.style.display = 'block';
+  fb.className = ''; // reset
+  fb.classList.add('mt-3');
+  if(type === 'danger') fb.classList.add('text-danger');
+  else if(type === 'info') fb.classList.add('text-info');
+  else fb.classList.add('text-muted');
+  fb.textContent = text;
+}
+
+function clearMailForm(){
+  document.getElementById('mc-name').value = '';
+  document.getElementById('mc-email').value = '';
+  document.getElementById('mc-msg').value = '';
+  const fb = document.getElementById('mc-feedback');
+  fb.style.display = 'none';
+}
+</script>
   </section>
 
   <footer class="mt-5 small text-muted">Made with ❤️ • Rahul Modok</footer>
