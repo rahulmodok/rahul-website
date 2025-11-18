@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #0f1215;
+    color: #f1f1f1;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h1, h2 {
+    color: #72ff5a;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.6;
+}0
+
