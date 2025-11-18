@@ -1,112 +1,120 @@
 <!doctype html>
-<html lang="bn">
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rahul — Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul Modol — Web Developer</title>  <!-- Bootstrap 5 CSS -->  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  <!-- Google Font -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    :root{ --sidebar-width: 260px; --accent: #0d6efd; --muted: #6c757d; }
+    html,body { height:100%; }
+    body{ font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#222; background:#fff; }
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #0c0c0c;
-            color: white;
-            font-family: "Segoe UI", sans-serif;
-        }
+    /* Sidebar */
+    .sidebar { width: var(--sidebar-width); position: fixed; top: 0; left: 0; height: 100vh; padding: 36px 24px; border-right: 1px solid #e9ecef; background: #fafafa; overflow: auto; }
+    .sidebar .avatar{ width:92px; height:92px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 14px; }
+    .sidebar h5{ text-align:center; margin-bottom:6px; font-weight:600; }
+    .sidebar .small-muted{ text-align:center; color:var(--muted); font-size:13px; margin-bottom:18px; }
+    .nav-link { color:#495057; padding:8px 0; }
+    .nav-link.active { color:var(--accent); font-weight:600; }
 
-        /* HERO SECTION */
-        .hero {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
+    /* Main content area */
+    .main { margin-left: var(--sidebar-width); min-height:100vh; display:flex; align-items:center; padding:48px; }
 
-        .hero h1 {
-            font-size: 58px;
-            color: #4cff4c;
-            margin: 0;
-        }
+    /* Hero layout */
+    .hero { width:100%; display:grid; grid-template-columns: 1fr 460px; gap: 32px; align-items:center; }
+    .hero h1{ font-family: "Playfair Display", serif; font-size:48px; line-height:1.02; margin:0 0 12px 0; }
+    .hero p.lead{ color:var(--muted); margin-bottom:20px; font-size:18px; }
+    .hero .cta-btn{ border-radius:6px; padding:10px 18px; font-weight:600; }
+    .hero .portrait{ width:100%; height:520px; object-fit:cover; border-radius:6px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .dots { position:absolute; left: calc(var(--sidebar-width) + 12px); bottom:28px; }
+    .dot { width:9px; height:9px; border-radius:50%; background:#cbd5e1; display:inline-block; margin-right:8px; }
+    .dot.active{ background:var(--accent); }
 
-        .hero p {
-            font-size: 22px;
-            color: #d4d4d4;
-            margin-top: 10px;
-        }
+    @media (max-width: 900px){ .sidebar { position:relative; width:100%; height:auto; border-right:none; padding:16px; display:flex; gap:12px; align-items:center; } .main { margin-left:0; padding:20px; } .hero { grid-template-columns: 1fr; gap:18px; } .hero .portrait{ height:360px; } .dots { left: 16px; bottom:12px; } }
+  </style></head>
+<body>  <!-- Sidebar -->  <aside class="sidebar d-flex flex-column align-items-stretch">
+    <!-- Replace ./images/avatar.jpg with your actual avatar file name. Save the photo you uploaded as "avatar.jpg" in the same folder as this HTML file. -->
+    <img class="avatar" src="./images/avatar.jpg" alt="Rahul Modol">
+    <h5>Rahul Modol</h5>
+    <div class="small-muted">Web Developer</div><nav class="nav flex-column mt-2">
+  <a class="nav-link active" href="#home">Home</a>
+  <a class="nav-link" href="#about">About</a>
+  <a class="nav-link" href="#services">Services</a>
+  <a class="nav-link" href="#skills">Skills</a>
+  <a class="nav-link" href="#work">Work</a>
+  <a class="nav-link" href="#contact">Contact</h4>
+    <p class="text-muted">Email: <a href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a><br>
+    Phone: 01330012362<br>
+    Facebook: <a href="https://www.facebook.com/share/1MandcV6DP/" target="_blank">Visit Profile</a></p>
+    <form method="POST" action="#">
+      <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Your name"></div>
+      <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Your email"></div>
+      <div class="mb-3"><textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea></div>
+      <button class="btn btn-primary">Send</button>
+    </form>
+  </section>
 
-        .buttons {
-            margin-top: 25px;
-        }
+  <!-- About -->
+  <section id="about" class="mt-5">
+    <h3>About</h3>
+    <p class="text-muted">Hi — I'm <strong>Rahul Modol</strong>, a Web Developer who builds fast and modern websites. I focus on responsive design, performance and clean code.</p>
+  </section>
 
-        .btn {
-            background: #4cff4c;
-            color: black;
-            padding: 12px 28px;
-            text-decoration: none;
-            margin: 6px;
-            font-weight: bold;
-            border-radius: 6px;
-            display: inline-block;
-        }
+  <!-- Services -->
+  <section id="services" class="mt-4">
+    <h4>Services</h4>
+    <ul>
+      <li>Custom website development (HTML/CSS/JS)</li>
+      <li>Responsive & mobile-first design</li>
+      <li>Performance optimization</li>
+    </ul>
+  </section>
 
-        .btn:hover {
-            background: #39cc39;
-        }
+  <!-- Skills -->
+  <section id="skills" class="mt-4">
+    <h4>Skills</h4>
+    <div class="row">
+      <div class="col-sm-4">HTML &amp; CSS</div>
+      <div class="col-sm-4">JavaScript</div>
+      <div class="col-sm-4">Bootstrap / Tailwind</div>
+    </div>
+  </section>
 
-        /* SECTION CARD */
-        .section {
-            max-width: 750px;
-            margin: 60px auto;
-            padding: 25px 20px;
-            background: #161616;
-            border-radius: 10px;
-        }
-
-        .section h2 {
-            margin-bottom: 15px;
-            color: #4cff4c;
-        }
-
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 14px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1>Rahul</h1>
-        <p>Student • Learner • Builder</p>
-
-        <div class="buttons">
-            <a href="#about" class="btn">About Me</a>
-            <a href="#contact" class="btn">Contact</a>
+  <!-- Work (placeholder) -->
+  <section id="work" class="mt-4">
+    <h4>Portfolio</h4>
+    <p class="text-muted">Add your project screenshots and links here. Replace these placeholder cards with your real projects.</p>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=1200&auto=format&fit=crop" class="card-img-top" alt="project">
+          <div class="card-body"><h5 class="card-title">Project A</h5><p class="card-text">Short description</p></div>
         </div>
-    </section>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" class="card-img-top" alt="project">
+          <div class="card-body"><h5 class="card-title">Project B</h5><p class="card-text">Short description</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section">
-        <h2>আমার সম্পর্কে</h2>
-        <p>হাই! আমি ছোট ছোট টুল বানাই, ওয়েব ডেভ শিখছি, এবং নতুন জিনিস explore করি।</p>
-    </section>
+  <!-- Contact -->
+  <section id="contact" class="mt-4">
+    <h4>Contact</h4>
+    <p class="text-muted">Email: <a href="mailto:rahulmodok579@gmail.com">your-email@example.com</a> • Phone: 01330012362</p>
+    <!-- Simple contact form (works with Netlify forms or with backend) -->
+    <form method="POST" action="#">
+      <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Your name"></div>
+      <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Your email"></div>
+      <div class="mb-3"><textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea></div>
+      <button class="btn btn-primary">Send</button>
+    </form>
+  </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
-        <h2>যোগাযোগ</h2>
-        <p>Email: <a style="color:#4cff4c" href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a></p>
-        <p>Phone: <a style="color:#4cff4c" href="tel:+8801330012362">+8801330012362</a></p>
-    </section>
+  <footer class="mt-5 small text-muted">Made with ❤️ • Rahul Modol</footer>
+</div>
 
-    <div class="footer">© Rahul • Made with ❤️</div>
-
-</body>
-</html>
+  </main>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script></body>
+    </html>
