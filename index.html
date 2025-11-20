@@ -1,242 +1,416 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rahul Modok — Web Developer</title>  <!-- Bootstrap 5 CSS -->  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  <!-- Google Font -->  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">  <style>
-    :root{ --sidebar-width: 260px; --accent: #0d6efd; --muted: #6c757d; }
-    html,body { height:100%; }
-    body{ font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#222; background:#fff; }
+  <title>Rahul Modok — Web Developer</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --sidebar-width: 260px;
+      --accent: #0d6efd;
+      --muted: #6c757d;
+    }
+
+    html,body{height:100%;}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin:0;
+      color:#212529;
+    }
 
     /* Sidebar */
-    .sidebar { width: var(--sidebar-width); position: fixed; top: 0; left: 0; height: 100vh; padding: 36px 24px; border-right: 1px solid #e9ecef; background: #fafafa; overflow: auto; }
-    .sidebar .avatar{ width:92px; height:92px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 14px; }
-    .sidebar h5{ text-align:center; margin-bottom:6px; font-weight:600; }
-    .sidebar .small-muted{ text-align:center; color:var(--muted); font-size:13px; margin-bottom:18px; }
-    .nav-link { color:#495057; padding:8px 0; }
-    .nav-link.active { color:var(--accent); font-weight:600; }
+    .sidebar{
+      width:var(--sidebar-width);
+      position:fixed;
+      top:0;
+      left:0;
+      height:100vh;
+      padding:36px 24px;
+      border-right:1px solid #e5e5e5;
+      background:#ffffff;
+    }
+    .sidebar .avatar{
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;
+      margin-bottom:16px;
+    }
+    .sidebar h5{
+      text-align:center;
+      margin-bottom:6px;
+      font-weight:600;
+    }
+    .sidebar .small-muted{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:18px;
+    }
+    .nav-link{
+      color:#495057;
+      padding:4px 0;
+    }
+    .nav-link.active{
+      color:var(--accent);
+      font-weight:600;
+    }
 
-    /* Main content area */
-    .main { margin-left: var(--sidebar-width); min-height:100vh; display:flex; align-items:center; padding:48px; }
+    /* Main */
+    .main{
+      margin-left:var(--sidebar-width);
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:40px 20px;
+      background:#f8f9fa;
+    }
+    .main-inner{
+      width:100%;
+      max-width:1000px;
+    }
 
-    /* Hero layout */
-    .hero { width:100%; display:grid; grid-template-columns: 1fr 460px; gap: 32px; align-items:center; }
-    .hero h1{ font-family: "Playfair Display", serif; font-size:48px; line-height:1.02; margin:0 0 12px 0; }
-    .hero p.lead{ color:var(--muted); margin-bottom:20px; font-size:18px; }
-    .hero .cta-btn{ border-radius:6px; padding:10px 18px; font-weight:600; }
-    .hero .portrait{ width:100%; height:520px; object-fit:cover; border-radius:6px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-    .dots { position:absolute; left: calc(var(--sidebar-width) + 12px); bottom:28px; }
-    .dot { width:9px; height:9px; border-radius:50%; background:#cbd5e1; display:inline-block; margin-right:8px; }
-    .dot.active{ background:var(--accent); }
+    /* Hero */
+    .hero{
+      width:100%;
+      display:grid;
+      grid-template-columns:1.1fr 420px;
+      gap:32px;
+      align-items:center;
+      margin-bottom:64px;
+    }
+    .hero h1{
+      font-family:"Playfair Display", serif;
+      font-size:40px;
+      line-height:1.2;
+      margin-bottom:16px;
+    }
+    .hero .lead{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+    .hero .cta-btn{
+      border-radius:999px;
+      padding:10px 18px;
+      font-weight:600;
+    }
+    .hero-portrait{
+      width:100%;
+      max-height:420px;
+      border-radius:18px;
+      object-fit:cover;
+      box-shadow:0 18px 40px rgba(15,23,42,.28);
+    }
 
-    @media (max-width: 900px){ .sidebar { position:relative; width:100%; height:auto; border-right:none; padding:16px; display:flex; gap:12px; align-items:center; } .main { margin-left:0; padding:20px; } .hero { grid-template-columns: 1fr; gap:18px; } .hero .portrait{ height:360px; } .dots { left: 16px; bottom:12px; } }
-  </style></head>
-<body>  <!-- Sidebar -->  <aside class="sidebar d-flex flex-column align-items-stretch">
-    <!-- Replace ./images/avatar.jpg with your actual avatar file name. Save the photo you uploaded as "avatar.jpg" in the same folder as this HTML file. -->
-    <img class="avatar" src="IMG-20250405-WA0443.jpg" alt="Rahul Modok">
+    /* Sections */
+    section{margin-bottom:56px;}
+    section h3{
+      font-size:24px;
+      margin-bottom:12px;
+      font-weight:600;
+    }
+
+    /* Portfolio cards */
+    .card img{
+      height:220px;
+      object-fit:cover;
+    }
+
+    /* Contact alert */
+    #mc-feedback{
+      display:none;
+    }
+
+    @media (max-width: 900px){
+      .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid #e5e5e5;
+      }
+      .main{
+        margin-left:0;
+        padding:24px 16px 40px;
+      }
+      .hero{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar d-flex flex-column align-items-stretch">
+    <!-- Hero avatar image from your repo -->
+    <img
+      src="IMG-20250405-WA0443.jpg"
+      alt="Rahul Modok"
+      class="avatar mx-auto"
+    />
+
     <h5>Rahul Modok</h5>
-    <div class="small-muted">Web Developer</div><nav class="nav flex-column mt-2">
-  <a class="nav-link active" href="#home">Home</a>
-  <a class="nav-link" href="#about">About</a>
-  <a class="nav-link" href="#services">Services</a>
-  <a class="nav-link" href="#skills">Skills</a>
-  <a class="nav-link" href="#work">Work</a>
-  <a class="nav-link" href="#contact">Contact</a>
-    <p class="text-muted">Email: <a href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a><br>
-    Phone: 01330012362<br>
-    Facebook: <a href="https://www.facebook.com/share/1MandcV6DP/" target="_blank">Visit Profile</a></p>
-    <form method="POST" action="#">
-      <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Your name"></div>
-      <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Your email"></div>
-      <div class="mb-3"><textarea class="form-control" name="message" rows="4" placeholder="Message"></textarea></div>
-      <button class="btn btn-primary">Send</button>
-    </form>
-  </section>
-<!-- HERO: copy this block and paste it BEFORE the <!-- About --> line -->
-<section id="home" class="hero position-relative">
-  <div>
-    <h1>I build<br> fast, modern websites.</h1>
-    <p class="lead">I turn ideas into clean, responsive interfaces and performant web experiences.</p>
-    <div class="d-flex gap-2">
-      <a class="btn btn-outline-secondary cta-btn" href="#work">View Portfolio</a>
-      <a class="btn btn-primary cta-btn" href="#contact">Contact Me</a>
+    <div class="small-muted">Web Developer</div>
+
+    <nav class="nav flex-column mt-2">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#work">Portfolio</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="mt-3 small text-muted">
+      Email:
+      <a href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a><br />
+      Phone: 01330012362<br />
+      Facebook:
+      <a href="https://www.facebook.com/share/1MandcV6DP/" target="_blank"
+        >Visit Profile</a
+      >
     </div>
-  </div>
+  </aside>
 
-  <div>
-    <!-- hero image (big) -->
-    <img class="portrait" src="IMG-20250103-WA0063.jpg" alt="Rahul Modok — hero image">
-  </div>
+  <!-- Main content -->
+  <main class="main">
+    <div class="main-inner">
 
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-<!-- END HERO -->
-  <!-- About -->
-  <section id="about" class="mt-5">
-    <h3>About</h3>
-    <p class="text-muted">Hi — I'm <strong>Rahul Modok</strong>, a Web Developer who builds fast and modern websites. I focus on responsive design, performance and clean code.</p>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="mt-4">
-    <h4>Services</h4>
-    <ul>
-      <li>Custom website development (HTML/CSS/JS)</li>
-      <li>Responsive & mobile-first design</li>
-      <li>Performance optimization</li>
-    </ul>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="mt-4">
-    <h4>Skills</h4>
-    <div class="row">
-      <div class="col-sm-4">HTML &amp; CSS</div>
-      <div class="col-sm-4">JavaScript</div>
-      <div class="col-sm-4">Bootstrap / Tailwind</div>
-    </div>
-  </section>
-
-  <!-- Work (placeholder) -->
-  <section id="work" class="mt-4">
-  <h4>Portfolio</h4>
-  <p class="text-muted">Add your project screenshots and links here. Replace these placeholder cards with your real projects.</p>
-
-  <div class="row">
-
- <div class="col-md-4 mb-3">
-  <a href="project-a.html" style="text-decoration:none; color:inherit;">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1508780709619-79562196bc64?q=80&w=1200&auto=format"
-     class="card-img-top"
-     alt="Project A">
-      <div class="card-body">
-        <h5 class="card-title">Project A</h5>
-        <p class="card-text">Short description</p>
-      </div>
-    </div>
-  </a>
- </div>
-
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" class="card-img-top" alt="project">
-        <div class="card-body">
-          <h5 class="card-title">Project B</h5>
-          <p class="card-text">Short description</p>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div>
+          <h1>I build fast, modern websites.</h1>
+          <p class="lead">
+            I turn ideas into clean, responsive interfaces and performant web
+            experiences for business owners and personal brands.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#work" class="btn btn-outline-secondary cta-btn">View Portfolio</a>
+            <a href="#contact" class="btn btn-primary cta-btn">Contact Me</a>
+          </div>
         </div>
-      </div>
-    </div>
-    
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop" class="card-img-top" alt="project">
-        <div class="card-body">
-          <h5 class="card-title">Project C</h5>
-          <p class="card-text">Short description</p>
+
+        <div>
+          <!-- Big hero image -->
+          <img
+            src="IMG-20250103-WA0063.jpg"
+            alt="Rahul Modok – hero image"
+            class="hero-portrait"
+          />
         </div>
-      </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <h3>About</h3>
+        <p class="text-muted">
+          Hi — I’m <strong>Rahul Modok</strong>, a web developer who enjoys
+          building simple, fast and modern websites. I focus on clean UI,
+          smooth experience and mobile-ready layouts so your visitors can easily
+          understand what you do and contact you.
+        </p>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <h3>Services</h3>
+        <ul>
+          <li>Custom website development (HTML/CSS/JS)</li>
+          <li>Responsive &amp; mobile-first design</li>
+          <li>Performance optimization</li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="row">
+          <div class="col-sm-4">HTML &amp; CSS</div>
+          <div class="col-sm-4">JavaScript</div>
+          <div class="col-sm-4">Bootstrap / Tailwind</div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="work">
+        <h3>Portfolio</h3>
+        <p class="text-muted">
+          Add your project screenshots and links here. Replace these placeholder
+          cards with your real projects.
+        </p>
+
+        <div class="row">
+
+          <!-- Project A card -->
+          <div class="col-md-4 mb-3">
+            <a href="project-a.html" class="text-decoration-none text-reset">
+              <div class="card">
+                <img
+                  src="https://images.unsplash.com/photo-1508780709619-79562196bc64?auto=format&fit=crop&w=1200&q=80"
+                  class="card-img-top"
+                  alt="Project A"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Project A</h5>
+                  <p class="card-text">Short description</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project B card -->
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+                class="card-img-top"
+                alt="Project B"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Project B</h5>
+                <p class="card-text">Short description</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project C card -->
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=80"
+                class="card-img-top"
+                alt="Project C"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Project C</h5>
+                <p class="card-text">Short description</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="mt-4">
+        <h3>Contact</h3>
+        <p class="text-muted">
+          Fill this form to send me a message. It will open your email app with
+          the details.
+        </p>
+
+        <div class="card p-3">
+          <form id="mailto-contact" class="mb-3" onsubmit="return handleMailto(event)">
+            <div class="mb-3">
+              <input
+                id="mc-name"
+                class="form-control"
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                id="mc-email"
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                id="mc-msg"
+                class="form-control"
+                name="message"
+                rows="4"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+            <div class="d-flex gap-2">
+              <button id="mc-send" class="btn btn-primary" type="submit">
+                Send
+              </button>
+              <button
+                id="mc-clear"
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick="clearMailForm()"
+              >
+                Clear
+              </button>
+            </div>
+
+            <div id="mc-feedback" class="mt-3 alert alert-info"></div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="mt-5 small text-muted text-center">
+        Made with ❤️ · Rahul Modok
+      </footer>
     </div>
+  </main>
 
-  </div>
-  </section>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Contact -->
-  <section id="contact" class="mt-4">
-    <h4>Contact</h4>
-    <p class="text-muted">Email: <a href="mailto:rahulmodok579@gmail.com">rahulmodok579@gmail.com</a> • Phone: 01330012362</p>
-    <!-- Simple contact form (works with Netlify forms or with backend) -->
-    <!-- Mailto JS form (paste this inside your Contact section) -->
-<div id="mailto-contact">
-  <form id="fakeContact" class="mb-3" onsubmit="return handleMailto(event)">
-    <div class="mb-3">
-      <input id="mc-name" class="form-control" type="text" name="name" placeholder="Your name" required>
-    </div>
+  <!-- Simple mailto handler -->
+  <script>
+    function handleMailto(evt){
+      evt.preventDefault();
 
-    <div class="mb-3">
-      <input id="mc-email" class="form-control" type="email" name="email" placeholder="Your email" required>
-    </div>
+      const toEmail = "rahulmodok579@gmail.com";
+      const name   = document.getElementById('mc-name').value.trim();
+      const email  = document.getElementById('mc-email').value.trim();
+      const msg    = document.getElementById('mc-msg').value.trim();
 
-    <div class="mb-3">
-      <textarea id="mc-msg" class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-    </div>
+      const fb = document.getElementById('mc-feedback');
 
-    <div class="d-flex gap-2">
-      <button id="mc-send" class="btn btn-primary" type="submit">Send</button>
-      <button id="mc-clear" class="btn btn-outline-secondary" type="button" onclick="clearMailForm()">Clear</button>
-    </div>
+      if(!name || !email || !msg){
+        fb.style.display = 'block';
+        fb.className = 'mt-3 alert alert-danger';
+        fb.textContent = 'Please fill all fields.';
+        return false;
+      }
 
-    <div id="mc-feedback" class="mt-3" style="display:none;"></div>
-  </form>
-</div>
+      const subject = encodeURIComponent('Website message from ' + name);
+      let body = '';
+      body += 'Name: ' + name + '%0A';
+      body += 'Email: ' + email + '%0A%0A';
+      body += encodeURIComponent(msg);
 
-<script>
-/**
- * handleMailto:
- * - validates fields (browser already does basic validation)
- * - builds mailto URL with encoded subject/body
- * - navigates to mailto: to open user's email client
- */
-function handleMailto(evt){
-  evt.preventDefault();
+      const mailto = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
 
-  const toEmail = "rahulmodok579@gmail.com"; // change if needed
-  const name  = document.getElementById('mc-name').value.trim();
-  const email = document.getElementById('mc-email').value.trim();
-  const msg   = document.getElementById('mc-msg').value.trim();
+      fb.style.display = 'block';
+      fb.className = 'mt-3 alert alert-info';
+      fb.textContent = 'Your email app should open now. If not, copy the message manually.';
 
-  // basic guard
-  if(!name || !email || !msg){
-    showFeedback('Please fill all fields.', 'danger');
-    return false;
-  }
+      return true;
+    }
 
-  // Build subject and body
-  const subject = encodeURIComponent(`Website message from ${name}`);
-  let body = '';
-  body += encodeURIComponent(`Name: ${name}`) + '%0A';
-  body += encodeURIComponent(`Email: ${email}`) + '%0A%0A';
-  body += encodeURIComponent(msg);
-
-  // Full mailto URL
-  const mailto = `mailto:${toEmail}?subject=${subject}&body=${body}`;
-
-  // Try to open mail client
-  // On some browsers this will open the native mail app; on desktop it opens default mail client.
-  window.location.href = mailto;
-
-  // Provide visual feedback in case mail client is blocked or user cancels
-  showFeedback('Your email client should open now. If it does not, copy the message manually or check device mail app settings.', 'info');
-  return true;
-}
-
-function showFeedback(text, type){
-  const fb = document.getElementById('mc-feedback');
-  fb.style.display = 'block';
-  fb.className = ''; // reset
-  fb.classList.add('mt-3');
-  if(type === 'danger') fb.classList.add('text-danger');
-  else if(type === 'info') fb.classList.add('text-info');
-  else fb.classList.add('text-muted');
-  fb.textContent = text;
-}
-
-function clearMailForm(){
-  document.getElementById('mc-name').value = '';
-  document.getElementById('mc-email').value = '';
-  document.getElementById('mc-msg').value = '';
-  const fb = document.getElementById('mc-feedback');
-  fb.style.display = 'none';
-}
-</script>
-  </section>
-
-  <footer class="mt-5 small text-muted">Made with ❤️ • Rahul Modok</footer>
-</div>
-
-  </main>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script></body>
-        </html>
+    function clearMailForm(){
+      document.getElementById('mc-name').value = '';
+      document.getElementById('mc-email').value = '';
+      document.getElementById('mc-msg').value = '';
+      const fb = document.getElementById('mc-feedback');
+      fb.style.display = 'none';
+    }
+  </script>
+</body>
+  </html>
