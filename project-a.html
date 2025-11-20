@@ -1,19 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project A – Rahul Modok</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project A – Rahul Modok</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body{
+        background:#f8f9fa;
+        font-family: 'Inter', sans-serif;
+        padding-bottom:40px;
+    }
+    .project-header{
+        text-align:center;
+        margin:40px 0 20px;
+    }
+    .project-header h1{
+        font-size:40px;
+        font-weight:700;
+    }
+    .sub-text{
+        color:#6c757d;
+        margin-bottom:30px;
+        font-size:18px;
+    }
+    .project-img{
+        width:100%;
+        border-radius:12px;
+        margin-bottom:25px;
+    }
+    h3{
+        margin-top:30px;
+        font-weight:600;
+    }
+    ul li{
+        margin-bottom:8px;
+    }
+    .btn-back{
+        margin-top:35px;
+    }
+</style>
 </head>
+
 <body>
 
-  <h1>Project A</h1>
-  <p>Ei page ta sudhu test er jonno banano. Jodi eta dekhte pao tahole link & file sob thik ache.</p>
+<div class="container">
 
-  <h2>Overview</h2>
-  <p>Ekhan theke pore design add korbo.</p>
+    <div class="project-header">
+        <h1>Project A</h1>
+        <p class="sub-text">A clean and modern detailed overview of the project.</p>
+    </div>
 
-  <a href="index.html">← Back to Home</a>
+    <img src="https://images.unsplash.com/photo-1508780709619-79562196bc64?q=80&w=1200&auto=format" 
+         class="project-img" alt="Project A Image">
+
+    <h3>Overview</h3>
+    <p>
+        This project demonstrates clean UI, fast performance and modern responsive design.
+        You can also write what problem it solves, how it works, and why you built it.
+    </p>
+
+    <h3>Features</h3>
+    <ul>
+        <li>Fast performance</li>
+        <li>Responsive design</li>
+        <li>Clean layout</li>
+        <li>Modern UI</li>
+    </ul>
+
+    <h3>Technologies Used</h3>
+    <p>HTML, CSS, Bootstrap</p>
+
+    <a href="index.html" class="btn btn-primary btn-back">← Back to Home</a>
+</div>
 
 </body>
 </html>
