@@ -1,164 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dark Theme Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Neon Website</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-main: #0f0f12;
-      --bg-card: #18181c;
-      --text-main: #eaeaea;
-      --text-muted: #9ca3af;
-      --accent: #6366f1;
-    }
+<style>
+:root{
+  --bg:#0b0b0f;
+  --card:#14141b;
+  --text:#f1f1f1;
+  --muted:#9ca3af;
+  --neon:#7c7cff;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
+body{
+  font-family:Poppins,system-ui,sans-serif;
+  background:radial-gradient(circle at top,#111120,#000);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+.hero-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  max-width:1100px;
+  align-items:center;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
+.hero-text h1{
+  font-size:60px;
+  font-weight:800;
+  line-height:1.1;
+  text-shadow:0 0 20px rgba(124,124,255,.6);
+}
 
-    .hero p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: auto;
-      margin-bottom: 30px;
-    }
+.hero-text span{
+  color:var(--neon);
+}
 
-    .btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
+.hero-text p{
+  margin-top:20px;
+  color:var(--muted);
+  max-width:480px;
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(99,102,241,.4);
-    }
+.btn{
+  margin-top:30px;
+  display:inline-block;
+  padding:14px 36px;
+  border-radius:50px;
+  background:var(--neon);
+  color:black;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 0 25px rgba(124,124,255,.8);
+  transition:.3s;
+}
 
-    /* ===== CARDS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
+.btn:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 0 45px rgba(124,124,255,1);
+}
 
-    .card {
-      background: var(--bg-card);
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.6);
-      transition: transform .3s ease;
-    }
+/* ===== IMAGE ===== */
+.hero-img{
+  position:relative;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
+.hero-img img{
+  width:100%;
+  max-width:380px;
+  border-radius:20px;
+  box-shadow:
+    0 0 30px rgba(124,124,255,.6),
+    0 0 80px rgba(124,124,255,.4);
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
+/* ===== CARDS ===== */
+.section{
+  padding:80px 20px;
+}
 
-    .card p {
-      color: var(--text-muted);
-      font-size: 15px;
-    }
+.grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      margin-top: 80px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
+.card{
+  background:linear-gradient(145deg,#171722,#0e0e15);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid rgba(124,124,255,.15);
+  transition:.4s;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-    }
-  </style>
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 40px rgba(124,124,255,.4);
+}
+
+.card h3{
+  margin-bottom:12px;
+  font-size:22px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:800px){
+  .hero-box{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-text h1{
+    font-size:44px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-box">
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Your Name Here</h1>
+    <div class="hero-text">
+      <h1>I Build <span>Dark</span><br>Premium Websites</h1>
       <p>
-        I build clean, modern, and powerful digital experiences with focus on design and performance.
+        Modern, neon-styled, high-impact designs that actually look expensive and powerful.
       </p>
-      <a href="#" class="btn">Contact Me</a>
-    </section>
+      <a class="btn" href="#">Contact Me</a>
+    </div>
 
-    <!-- CARDS -->
-    <section class="grid">
-      <div class="card">
-        <h3>Web Design</h3>
-        <p>
-          Modern UI, dark themes, responsive layouts that look premium on every device.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Development</h3>
-        <p>
-          Clean HTML, CSS, and scalable structure without unnecessary frameworks.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Branding</h3>
-        <p>
-          Minimal, sharp and professional brand presence with strong visual hierarchy.
-        </p>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      © 2026 • Your Name — All rights reserved
-    </footer>
+    <div class="hero-img">
+      <!-- নিজের ছবি দিতে চাইলে image URL বদলাবি -->
+      <img src="https://i.imgur.com/8Km9tLL.jpg" alt="profile">
+    </div>
 
   </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="grid">
+
+    <div class="card">
+      <h3>Neon Dark UI</h3>
+      <p>Glow effects, depth, contrast—no flat boring black.</p>
+    </div>
+
+    <div class="card">
+      <h3>Bold Typography</h3>
+      <p>Strong headlines that immediately grab attention.</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium Motion</h3>
+      <p>Smooth hover animations and modern interaction feel.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 • Dark Neon Website
+</footer>
 
 </body>
 </html>
