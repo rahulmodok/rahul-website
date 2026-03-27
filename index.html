@@ -1,13 +1,18 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rahul Modak | Personal Identity</title>
+
 <meta name="description" content="Rahul Modak official website. Clean digital identity and personal profile.">
 <meta name="keywords" content="Rahul Modak, Rahul Modak website, Rahul Modak profile">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Segoe UI',sans-serif}
+
 :root{
 --bg-dark:#0a0a0a;
 --card-bg:#141414;
@@ -16,113 +21,359 @@
 --accent:#00ffcc;
 --border:#222;
 }
-body{background:var(--bg-dark);color:var(--text-main);line-height:1.6;scroll-behavior:smooth}
-.container{max-width:1000px;margin:0 auto;padding:0 1.5rem}nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;position:sticky;top:0;background:rgba(10,10,10,.7);backdrop-filter:blur(15px);border-bottom:1px solid var(--border);z-index:1000} .logo{font-weight:800;letter-spacing:1px;text-transform:uppercase} .nav-links{display:flex;list-style:none} .nav-links li{margin-left:1.5rem} .nav-links a{color:var(--text-dim);text-decoration:none;position:relative} .nav-links a::after{content:'';height:2px;width:0;background:var(--accent);position:absolute;left:0;bottom:-4px;transition:.3s} .nav-links a:hover::after{width:100%}
 
-.hero{padding:90px 0;text-align:center;background:radial-gradient(circle at top,#1a1a1a,#0a0a0a);border-bottom:1px solid var(--border)} .profile-container{width:150px;height:150px;margin:0 auto 1.5rem;border-radius:50%;overflow:hidden;border:2px solid var(--border);box-shadow:0 0 40px rgba(0,255,204,.25)} .profile-img{width:100%;height:100%;object-fit:cover} .subtitle{color:var(--accent);letter-spacing:4px;font-size:.75rem;margin-bottom:1rem} h1{font-size:clamp(2.5rem,8vw,3.5rem);margin-bottom:1rem} .tagline{color:var(--text-dim);max-width:500px;margin:0 auto 1rem}
+body{
+background:var(--bg-dark);
+color:var(--text-main);
+line-height:1.6;
+scroll-behavior:smooth
+}
 
-.btn-group{display:flex;justify-content:center;gap:1rem} .btn{padding:.8rem 1.8rem;border-radius:6px;font-weight:600;transition:.3s;text-decoration:none} .btn.primary{background:var(--accent);color:#000} .btn.primary:hover{box-shadow:0 0 15px var(--accent)} .btn.secondary{border:1px solid var(--border);color:#fff} .btn.secondary:hover{border-color:var(--accent)}
+.container{max-width:1000px;margin:0 auto;padding:0 1.5rem}
 
-section{padding:80px 0} h2{text-align:center;margin-bottom:2.5rem}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1.5rem 0;
+position:sticky;
+top:0;
+background:rgba(10,10,10,.7);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--border);
+z-index:1000
+}
 
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem} .info-card{background:var(--card-bg);padding:2rem;border-radius:12px;border:1px solid var(--border);text-align:center;transition:.3s;cursor:pointer} .info-card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--accent)} .info-card i{color:var(--accent);font-size:1.6rem;margin-bottom:1rem}
+.logo{font-weight:800;letter-spacing:1px;text-transform:uppercase}
 
-.highlight{font-size:1.4rem;text-align:center;margin-top:40px;color:var(--accent);letter-spacing:1px}
+.nav-links{display:flex;list-style:none}
+.nav-links li{margin-left:1.5rem}
 
-.contact-content{text-align:center} .whatsapp-box{background:#25D366;color:#fff;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem} .social-row{display:flex;justify-content:center;gap:2rem} .social-row a{color:var(--text-dim);font-size:1.8rem} .social-row a:hover{color:var(--accent)}
+.nav-links a{
+color:var(--text-dim);
+text-decoration:none;
+position:relative
+}
 
-footer{text-align:center;padding:3rem;border-top:1px solid var(--border);color:#555;font-size:.8rem}
+.nav-links a::after{
+content:'';
+height:2px;
+width:0;
+background:var(--accent);
+position:absolute;
+left:0;
+bottom:-4px;
+transition:.3s
+}
 
-@media(max-width:600px){.nav-links{display:none}.btn-group{flex-direction:column}} </style>
+.nav-links a:hover::after{width:100%}
 
+/* HERO */
+.hero{
+padding:90px 0;
+text-align:center;
+background:radial-gradient(circle at top,#1a1a1a,#0a0a0a);
+border-bottom:1px solid var(--border)
+}
+
+.profile-container{
+width:150px;
+height:150px;
+margin:0 auto 1.5rem;
+border-radius:50%;
+overflow:hidden;
+border:2px solid var(--border);
+box-shadow:0 0 40px rgba(0,255,204,.25)
+}
+
+.profile-img{
+width:100%;
+height:100%;
+object-fit:cover
+}
+
+.subtitle{
+color:var(--accent);
+letter-spacing:4px;
+font-size:.75rem;
+margin-bottom:1rem
+}
+
+h1{
+font-size:clamp(2.5rem,8vw,3.5rem);
+margin-bottom:1rem
+}
+
+.tagline{
+color:var(--text-dim);
+max-width:500px;
+margin:0 auto 1rem
+}
+
+/* BUTTON */
+.btn-group{display:flex;justify-content:center;gap:1rem}
+
+.btn{
+padding:.8rem 1.8rem;
+border-radius:6px;
+font-weight:600;
+transition:.3s;
+text-decoration:none
+}
+
+.btn.primary{
+background:var(--accent);
+color:#000
+}
+
+.btn.primary:hover{
+box-shadow:0 0 15px var(--accent)
+}
+
+.btn.secondary{
+border:1px solid var(--border);
+color:#fff
+}
+
+.btn.secondary:hover{
+border-color:var(--accent)
+}
+
+/* SECTION */
+section{padding:80px 0}
+
+h2{
+text-align:center;
+margin-bottom:2.5rem
+}
+
+/* CARDS */
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:1.5rem
+}
+
+.info-card{
+background:var(--card-bg);
+padding:2rem;
+border-radius:12px;
+border:1px solid var(--border);
+text-align:center;
+transition:.3s;
+cursor:pointer
+}
+
+.info-card:hover{
+transform:translateY(-8px) scale(1.02);
+border-color:var(--accent)
+}
+
+.info-card i{
+color:var(--accent);
+font-size:1.6rem;
+margin-bottom:1rem
+}
+
+.highlight{
+font-size:1.4rem;
+text-align:center;
+margin-top:40px;
+color:var(--accent);
+letter-spacing:1px
+}
+
+/* CONTACT */
+.contact-content{text-align:center}
+
+.whatsapp-box{
+background:#25D366;
+color:#fff;
+padding:1rem 2rem;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+display:inline-flex;
+align-items:center;
+gap:10px;
+margin-bottom:2rem
+}
+
+.social-row{
+display:flex;
+justify-content:center;
+gap:2rem
+}
+
+.social-row a{
+color:var(--text-dim);
+font-size:1.8rem
+}
+
+.social-row a:hover{
+color:var(--accent)
+}
+
+footer{
+text-align:center;
+padding:3rem;
+border-top:1px solid var(--border);
+color:#555;
+font-size:.8rem
+}
+
+@media(max-width:600px){
+.nav-links{display:none}
+.btn-group{flex-direction:column}
+}
+</style>
 </head>
-<body><div class="container">
+
+<body>
+
+<div class="container">
 <nav>
 <div class="logo">Rahul Modak</div>
+
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-</div><header id="home" class="hero">
-<div class="container">
-<div class="profile-container">
-<img src="rahul-modak-profile.jpg" class="profile-img">
 </div>
+
+<header id="home" class="hero">
+<div class="container">
+
+<div class="profile-container">
+<img src="rahul-modak-profile.jpg?v=2" class="profile-img" alt="Rahul Modak">
+</div>
+
 <span class="subtitle">PERSONAL IDENTITY</span>
+
 <h1>Rahul Modak</h1>
+
 <p class="tagline">Simple. Clear. Intentional digital presence.</p>
+
 <h2 style="text-align:center;margin-top:10px;">Rahul Modak Official Website</h2>
+
 <div class="btn-group">
 <a href="#about" class="btn primary">Read Bio</a>
 <a href="#contact" class="btn secondary">Get In Touch</a>
 </div>
+
 </div>
-</header><section id="about">
+</header>
+
+<section id="about">
 <div class="container">
+
 <h2>About Me</h2>
+
 <div class="info-grid">
+
 <div class="info-card" onclick="location.href='#trust'">
 <i class="fas fa-user-shield"></i>
 <h3>Trust</h3>
 <p>Clean image. No noise.</p>
 </div>
+
 <div class="info-card" onclick="location.href='#digital'">
 <i class="fas fa-laptop-code"></i>
 <h3>Digital</h3>
 <p>Sharp and minimal presence.</p>
 </div>
+
 <div class="info-card" onclick="location.href='#connect'">
 <i class="fas fa-users"></i>
 <h3>Connect</h3>
 <p>Real people. Real growth.</p>
 </div>
+
 </div>
+
 <div class="highlight">No fake. No noise. Just presence.</div>
+
 </div>
-</section><section id="trust">
+</section>
+
+<section id="trust">
 <div class="container">
 <h2>Trust</h2>
-<p style="text-align:center;color:var(--text-dim)">I maintain a clean and reliable presence in everything I do.</p>
+<p style="text-align:center;color:var(--text-dim)">
+I maintain a clean and reliable presence in everything I do.
+</p>
 </div>
-</section><section id="digital">
+</section>
+
+<section id="digital">
 <div class="container">
 <h2>Digital</h2>
-<p style="text-align:center;color:var(--text-dim)">Focused on minimal, sharp and impactful digital identity.</p>
+<p style="text-align:center;color:var(--text-dim)">
+Focused on minimal, sharp and impactful digital identity.
+</p>
 </div>
-</section><section id="connect">
+</section>
+
+<section id="connect">
 <div class="container">
 <h2>Connect</h2>
-<p style="text-align:center;color:var(--text-dim)">Building real connections that actually matter.</p>
+<p style="text-align:center;color:var(--text-dim)">
+Building real connections that actually matter.
+</p>
 </div>
-</section><section>
+</section>
+
+<section>
 <div class="container">
+
 <h2>What I Do</h2>
+
 <div class="info-grid">
 <div class="info-card"><h3>Identity</h3><p>Simple but strong presence.</p></div>
 <div class="info-card"><h3>Design</h3><p>Minimal & sharp visuals.</p></div>
 <div class="info-card"><h3>Growth</h3><p>Focused on real impact.</p></div>
 </div>
+
 </div>
-</section><section id="contact">
+</section>
+
+<section id="contact">
 <div class="container">
+
 <div class="contact-content">
+
 <h2>Connect</h2>
+
 <a href="https://wa.me/8801330012362" class="whatsapp-box" target="_blank">
 <i class="fab fa-whatsapp"></i> 01330012362
 </a>
+
 <div class="social-row">
 <a href="https://www.facebook.com/share/17fJxAGCfn/" target="_blank"><i class="fab fa-facebook"></i></a>
 <a href="https://www.instagram.com/vib3swith_rahul_/" target="_blank"><i class="fab fa-instagram"></i></a>
-</div><form action="mailto:rahulmodok579@gmail.com" method="post" enctype="text/plain" style="max-width:500px;margin:2rem auto 0;display:flex;flex-direction:column;gap:1rem">
-<input type="text" name="name" placeholder="Your Name" required style="padding:10px;border-radius:5px;border:1px solid var(--border);background:#111;color:#fff">
-<input type="email" name="email" placeholder="Your Email" required style="padding:10px;border-radius:5px;border:1px solid var(--border);background:#111;color:#fff">
-<textarea name="message" placeholder="Your Message" required style="padding:10px;border-radius:5px;border:1px solid var(--border);background:#111;color:#fff"></textarea>
-<button type="submit" class="btn primary">Send Email</button>
-</form></div>
 </div>
-</section><footer>
+
+<form action="mailto:rahulmodok579@gmail.com" method="post" enctype="text/plain" style="max-width:500px;margin:2rem auto 0;display:flex;flex-direction:column;gap:1rem">
+
+<input type="text" name="name" placeholder="Your Name" required style="padding:10px;border-radius:5px;border:1px solid var(--border);background:#111;color:#fff">
+
+<input type="email" name="email" placeholder="Your Email" required style="padding:10px;border-radius:5px;border:1px solid var(--border);background:#111;color:#fff">
+
+<textarea name="message" placeholder="Your Message" required style="padding:10px;border-radius:5px;border:1px solid var(--border);background:#111;color:#fff"></textarea>
+
+<button type="submit" class="btn primary">Send Email</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+<footer>
 <p>© 2026 Rahul Modak</p>
-</footer></body>
-</html>
+</footer>
+
+</body>
+  </html>
